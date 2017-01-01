@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/git_solution_style.css">
+    <link rel="stylesheet" type="text/css" href="css/git_guide_style.css">
     <meta charset="UTF-8">
-    <title>Git-справочник</title>
+    <title>Руководство по Git</title>
 </head>
 <body>
+<!--Верхняя навигационная панель-->
+<ul class="top-nav">
+    <li><a class="active" href=index.html>На главную</a></li>
+    <li class="right"><a href=about.html>О проекте</a></li>
+</ul>
+
+<!--Левая навигационная панель-->
+<ul class="left-nav">
+    <li class="left-nav"><a class="active" href="index.html">Назад</a> </li>
+    <li class="left-nav"><a href="#1">Установка Git-клиента</a></li>
+    <li class="left-nav"><a href="#2">Сервисные утилиты</a></li>
+    <li class="left-nav"><a href="#3">Создание проекта</a></li>
+</ul>
+
+
 <Header>
-    <h1>Краткое руководство по Git</h1>
+    <h1>Руководство по Git</h1>
 </Header>
 
-<nav>
-    <ul>
-        <li><a class="active" href="index.html">Назад</a> </li>
-        <li><a href="#1">Установка Git-клиента</a></li>
-        <li><a href="#2">Сервисные утилиты</a></li>
-        <li><a href="#3">Создание проекта</a></li>
-    </ul>
-</nav>
-<article>
+/* Установка git-клиента */
+<div class="container">
     <h2 ID="1">Установка Git-клиента</h2>
     <ul>
         <li><a href="https://git-for-windows.github.io//" target="_blank">Download Git for Windows</a></li>
@@ -40,12 +48,13 @@
     </ul>
     <br>
 
-</article>
-<article>
+</div>
+
+/* Сервисные утилиты */
+<div class="container">
     <h2 id="2">Сервисные утилиты</h2><br>
-    <img src="resources/1_git_bash.png" width="579" height="317"><br>
-    <p>
-        <pre>
+    <img src="resources/1_git_bash.png" width="579" height="319"><br>
+    <pre>
     Есть сервисная утилита с разными именами: git-cmd.exe и git-bash.exe. Оба эти exe-шника делают:
 
     1) Инициализация переменных окружения (PATH, и пр.)
@@ -66,36 +75,30 @@
     <em><b>Если ранее git не использовался, сначала необходимо произвести установку.
     Выполните следующие команды, чтобы git узнал Ваше имя и электронную почту.</b></em>
 
-    <h1>Установка имени и электронной почты:</h1>
-    <div class="toDO">
-        <code><b>
+    <b>Установка имени и электронной почты:</b>
+</pre>
+    <h4>Выполните:</h4>
+    <pre class="instructions">
            git config --global user.name "Your Name"
            git config --global user.email "your_email@whatever.com"
-        </b></code>
-    </div>
-    <h1>Параметры установки окончаний строк:</h1><br>
+    </pre><br>
+    <p><b>Параметры установки окончаний строк:</b></p>
     <p><b>для пользователей Unix/Mac:</b></p>
-    <div class="toDO">
-        <code><b>
+        <pre class="instructions">
             git config --global core.autocrlf input
             git config --global core.safecrlf true
-        </b></code>
-    </div><br>
+        </pre>
+    <br>
     <p><b>для пользователей Windows:</b></p>
-    <div class="toDO">
-    <code><b>
+    <pre class="instructions">
         git config --global core.autocrlf true
         git config --global core.safecrlf true
-    </b></code>
-    </div>
-</pre>
-</article>
+   </pre>
+</div>
 
-<article>
+<div class="container">
 <h2 id="3">Создание проекта</h2>
-</article>
-
-
+</div>
 
 </body>
 
