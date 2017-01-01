@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/git_solution_style.css">
+    <meta charset="UTF-8">
+    <title>Git-справочник</title>
+</head>
+<body>
+<Header>
+    <h1>Краткое руководство по Git</h1>
+</Header>
+
+<nav>
+    <ul>
+        <li><a class="active" href="index.html">Назад</a> </li>
+        <li><a href="#1">Установка Git-клиента</a></li>
+        <li><a href="#2">Сервисные утилиты</a></li>
+        <li><a href="#3">Создание проекта</a></li>
+    </ul>
+</nav>
+<article>
+    <h2 ID="1">Установка Git-клиента</h2>
+    <ul>
+        <li><a href="https://git-for-windows.github.io//" target="_blank">Download Git for Windows</a></li>
+    </ul>
+    <br>
+    <ul>
+        <li>
+            <a href="https://git-scm.com/download/mac" target="_blank">Download Git for Mac OS X</a>
+        </li>
+    </ul>
+    <br>
+    <ul>
+    <li>
+    Git for Linux:<br>
+    <i>yum install git<br>
+    apt-get install git<br>
+    zypper in git</i>
+    </li>
+    </ul>
+    <br>
+
+</article>
+<article>
+    <h2 id="2">Сервисные утилиты</h2><br>
+    <img src="resources/1_git_bash.png" width="579" height="317"><br>
+    <p>
+        <pre>
+    Есть сервисная утилита с разными именами: git-cmd.exe и git-bash.exe. Оба эти exe-шника делают:
+
+    1) Инициализация переменных окружения (PATH, и пр.)
+    2) Запуск терминала.
+
+    Разница между ними только одна - по умолчанию git-bash.exe запускает терминал mintty с bash внутри. git-cmd.exe запускает стандартный терминал Windows с cmd.exe.
+    Более того, git-cmd.exe имеет ключик --command=... с помощью которого можно запустить bash вместо cmd при желании. git.exe это самостоятельная программа рядом с
+    которой лежат все необходимые утилиты из пакета msys (например ls, vim, sed, и прочая), а недостающие утилиты можно "доставить" с помощью pacman. Предполагаемая
+    проблема с "путями" не имеет оснований - все команды выполняет сам гит. git add **/*.cpp будет обрабатываться самим гитом.
+
+    Реальные различия:
+
+    Из командной строки cmd.exe несколько меняется синтаксис, т.к. ^ это управляющий символ cmd.exe. Например, вместо git.exe rebase -i 2385397^1 нужно писать git.exe
+    rebase -i 2385397^^1. Маски файлов, вроде вышеописанного git add *.cpp не "разворачиваются" в список файлов, то есть аргументы передаются без изменений и git
+    самостоятельно выполняет поиск подходящих файлов. В итоге мы имеем ошибочное поведение когда git add *.cpp добавляет файлы из подкаталогов. В консоли cmd.exe
+    (если только она не в ConEmu запущена) нельзя использовать 256 цветов в Vim.
+
+    <em><b>Если ранее git не использовался, сначала необходимо произвести установку.
+    Выполните следующие команды, чтобы git узнал Ваше имя и электронную почту.</b></em>
+
+    <h1>Установка имени и электронной почты:</h1>
+    <div class="toDO">
+        <code><b>
+           git config --global user.name "Your Name"
+           git config --global user.email "your_email@whatever.com"
+        </b></code>
+    </div>
+    <h1>Параметры установки окончаний строк:</h1><br>
+    <p><b>для пользователей Unix/Mac:</b></p>
+    <div class="toDO">
+        <code><b>
+            git config --global core.autocrlf input
+            git config --global core.safecrlf true
+        </b></code>
+    </div><br>
+    <p><b>для пользователей Windows:</b></p>
+    <div class="toDO">
+    <code><b>
+        git config --global core.autocrlf true
+        git config --global core.safecrlf true
+    </b></code>
+    </div>
+</pre>
+</article>
+
+<article>
+<h2 id="3">Создание проекта</h2>
+</article>
+
+
+
+</body>
+
+</html>
